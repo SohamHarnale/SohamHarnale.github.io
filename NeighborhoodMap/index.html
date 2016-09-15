@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+        <h1 class="text-center">Pune, India</h1>
+        <div class="search">
+            <input  class="search-box" id="search-box" data-bind = "textInput: searchTerm">
+        </div>
+        <div class="app" id="app">
+            <div class="list" id="list">
+                <ul class="results" data-bind = "foreach: filteredList">
+                    <li class="place" id="place" data-bind = "text: name, click: $parent.bounce"></li>
+                </ul>
+            </div>
+            <div class="map" id="map"></div>
+        </div>
+
+
+
+
+<script type="text/javascript" src = "libs/jquery.min.js"></script>
+<script async defer type="text/javascript" src = "libs/knockout-3.4.0.js"></script>
+<script type="text/javascript" src = "script.js"></script>
+<script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBpbsdcFYIDiwOlURu7lz_DWaTNk_9YW6M&v=3&callback=initiate" onerror="errorHandling()"></script>
+
+</body>
+</html>
